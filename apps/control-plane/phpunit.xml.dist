@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php" colors="true" cacheDirectory=".phpunit.cache">
+  <php>
+    <env name="APP_ENV" value="test"/>
+    <env name="APP_DEBUG" value="1"/>
+    <env name="APP_SECRET" value="test-secret"/>
+  </php>
+  <testsuites>
+    <testsuite name="Control Plane">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
