@@ -59,7 +59,7 @@ jobs:
       - name: Commit lockfiles
         shell: bash
         run: |
-          if git diff --quiet -- apps/web/package-lock.json apps/instance-api/composer.lock apps/control-plane/composer.lock; then
+          if [ -z "$(git status --porcelain -- apps/web/package-lock.json apps/instance-api/composer.lock apps/control-plane/composer.lock)" ]; then
             echo "Lockfiles already synchronized."
             exit 0
           fi
