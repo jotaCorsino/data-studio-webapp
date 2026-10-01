@@ -208,3 +208,41 @@ A primeira versão comercial deverá ser acompanhada por:
 Os manuais completos serão finalizados **ao final da V1**, quando os fluxos reais estiverem estabilizados, e deverão ser testados contra uma instalação/remoção reais e a interface da versão entregue.
 
 Os requisitos estão em `docs/20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md`.
+
+
+## Base técnica da V1
+
+A primeira versão foi definida para ser compatível com implantação dedicada em cPanel:
+
+```text
+Frontend
+React + TypeScript + Vite
+(build antes do deploy)
+
+Backend
+Symfony 7.4 LTS
+PHP 8.3 mínimo
+PHP 8.4 recomendado
+
+Banco interno
+MariaDB / MySQL
+
+API
+JSON same-origin
+/api/v1
+
+Autenticação
+sessão server-side
+
+Jobs
+fila persistida no banco
++
+cPanel Cron one-shot
+
+PDF inicial
+Dompdf
+```
+
+Node e Composer não são requisitos de runtime para o cliente. O pacote oficial de produção levará frontend compilado e dependências PHP já resolvidas.
+
+A especificação completa está em `docs/21-DECISOES-TECNICAS-V1.md`.
