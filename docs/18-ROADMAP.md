@@ -351,3 +351,80 @@ Este documento deve mudar quando houver:
 - decisão arquitetural.
 
 Não mudar o roadmap apenas para refletir commits.
+
+## 23. Vertical 13 — Licenciamento e proteção de release
+
+Antes da V1 comercial:
+
+- proteção do backend;
+- processo de build/release;
+- Instance ID;
+- Control Plane;
+- lease assinado;
+- grace period;
+- suspensão;
+- revogação;
+- reativação;
+- binding da Instance;
+- telemetria mínima;
+- testes de cópia/migração.
+
+Saída:
+
+- pacote copiado para outro ambiente não funciona como nova Instance sem ativação válida.
+
+## 24. Vertical 14 — Homologação de implantação cPanel
+
+Executar instalação real do zero em ambiente homologado:
+
+- domínio/subdomínio;
+- PHP;
+- loader;
+- banco;
+- storage;
+- cron;
+- HTTPS;
+- ativação;
+- Source;
+- PDF;
+- e-mail;
+- automação;
+- backup;
+- atualização.
+
+Saída:
+
+- implantação repetível por técnico seguindo checklist.
+
+## 25. Fase de fechamento da V1 — Manuais
+
+Somente com fluxos estabilizados, produzir e homologar:
+
+### Manual de Implantação e Ativação
+
+Validado por um técnico que não participou diretamente da implementação da rotina de instalação, sempre que possível.
+
+### Manual de Desativação, Offboarding e Remoção
+
+Validado em uma Instance de teste do cancelamento até a remoção final.
+
+### Manual do Usuário
+
+Atualizado com a interface final, screenshots sintéticos e exemplos práticos.
+
+A release comercial da V1 depende da homologação desses três manuais.
+
+## 26. Marco de release comercial
+
+Além do marco funcional, a V1 comercial exige:
+
+1. fluxo principal homologado;
+2. segurança mínima homologada;
+3. licenciamento funcional;
+4. pacote protegido;
+5. instalação cPanel reproduzível;
+6. backup/restauração testados;
+7. offboarding testado;
+8. política de retenção aprovada;
+9. três manuais concluídos;
+10. documentação compatível com a versão entregue.
