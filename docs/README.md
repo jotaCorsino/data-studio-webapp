@@ -16,11 +16,11 @@ Se uma regra necessária não estiver aqui, ela deve ser formalizada antes de vi
 | `01-PRINCIPIOS-E-ESCOPO.md` | princípios, fronteiras e não objetivos | Em consolidação |
 | `02-USUARIOS-E-JORNADAS.md` | perfis conceituais e experiências principais | Em consolidação |
 | `03-ARQUITETURA.md` | arquitetura conceitual e responsabilidades | Em consolidação |
-| `04-MODELO-DE-DOMINIO.md` | entidades e relações | Planejado |
+| `04-MODELO-DE-DOMINIO.md` | entidades e relações | Em consolidação |
 | `05-FONTES-E-CONECTORES.md` | integrações, descoberta e leitura | Planejado |
 | `06-DADOS-DATASETS-E-CAMPOS.md` | normalização, tipos e metadados | Planejado |
 | `07-ANALISES-E-VISOES.md` | filtros, agrupamentos, métricas e análises | Planejado |
-| `08-RELATORIOS.md` | composição, preview, PDF e paginação | Planejado |
+| `08-RELATORIOS.md` | composição, configuração, preview, PDF e paginação | Em consolidação |
 | `09-DASHBOARDS.md` | painéis, interação e indicadores | Planejado |
 | `10-APRESENTACOES.md` | geração de apresentações | Planejado |
 | `11-MODELOS-E-PARAMETROS.md` | reutilização e execução parametrizada | Planejado |
@@ -41,7 +41,8 @@ Para contexto geral:
 2. `00-VISAO-DO-PRODUTO.md`;
 3. `01-PRINCIPIOS-E-ESCOPO.md`;
 4. `02-USUARIOS-E-JORNADAS.md`;
-5. `03-ARQUITETURA.md`.
+5. `03-ARQUITETURA.md`;
+6. `04-MODELO-DE-DOMINIO.md`.
 
 Para implementar uma feature, consultar apenas os documentos diretamente relacionados, além das regras transversais de `AGENTS.md`.
 
