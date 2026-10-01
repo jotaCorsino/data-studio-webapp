@@ -201,27 +201,51 @@ Princípios obrigatórios desde o início:
 
 A especificação detalhada será mantida em `docs/15-SEGURANCA.md` quando criada.
 
-## 11. Desenvolvimento por fatias verticais
+## 11. Estratégia frontend-first e validação vertical
 
-Evitar desenvolver toda a camada frontend e somente depois iniciar backend, dados e integração.
+A estratégia aprovada para o início da V1 é **frontend-first**, com homologação visual antes do backend funcional.
 
-Preferir uma fatia completa que prove o produto de ponta a ponta:
+Isso não autoriza criar um frontend descartável ou um sistema fictício paralelo.
+
+Durante a fase visual:
 
 ```text
-interface mínima
+apps/web real
 +
-backend mínimo
+contratos TypeScript
 +
-fonte real
+fixtures sintéticas
 +
-dataset real
+adapters de dados
 +
-análise real
-+
-saída real
+homologação visual
 ```
 
-Cada nova abstração deve, sempre que possível, ser validada por um caso de uso real.
+Depois da homologação das principais jornadas:
+
+```text
+mesma interface
++
+/api/v1 real
++
+backend Symfony
++
+dados reais
++
+validação ponta a ponta
+```
+
+Regras:
+
+- componentes criados na fase visual permanecem como base do produto;
+- fixtures devem ser sintéticas, tipadas e isoladas;
+- mocks não podem virar autoridade de regra de negócio;
+- contratos devem facilitar substituição por API real;
+- segurança, autorização e validação definitiva continuam pertencendo ao backend;
+- a primeira prova funcional completa continua sendo o caso de uso de Prestação de Contas;
+- após a fase de UX, voltar a desenvolver em fatias verticais, evitando longas fases isoladas de frontend ou backend.
+
+Cada abstração relevante deve posteriormente ser validada por um caso real de ponta a ponta.
 
 ## 12. Escopo e overengineering
 
@@ -421,11 +445,20 @@ O Control Plane pertence ao mesmo repositório canônico para manter o projeto a
 
 Não extrair bibliotecas compartilhadas prematuramente.
 
-## 24. Fase 1
+## 24. Sequência inicial de desenvolvimento
 
-Quando o desenvolvimento for autorizado, seguir as tarefas FND-001 a FND-007 descritas em `docs/18-ROADMAP.md`.
+A sequência aprovada é:
 
-Não implementar a Vertical 1 de Prestação de Contas antes da homologação da fundação correspondente.
+```text
+FND-001 — scaffold técnico
+→ FE-001 ... FE-009 — frontend e homologação visual
+→ FND-002 ... FND-007 — backend e infraestrutura
+→ Vertical 1 — Prestação de Contas real
+```
+
+As tarefas visuais podem ser refinadas conforme a homologação, mas não devem antecipar backend fictício ou regras de negócio não documentadas.
+
+Consultar `docs/18-ROADMAP.md` para a ordem canônica.
 
 
 ## 25. Painel de acompanhamento
@@ -450,3 +483,42 @@ Regras:
 - manter a seção `Etapa atual` e o `Próximo marco` coerentes com a tabela;
 - o painel é um resumo; detalhes técnicos continuam em `docs/18-ROADMAP.md`;
 - não criar nova etapa no painel sem também formalizar seu lugar no roadmap quando ela representar mudança real de planejamento.
+
+
+## 26. Uso de skills de frontend pelo Codex
+
+Para tarefas `FE-*`, quando o ambiente do Codex disponibilizar uma skill de **site building**, **webapp building**, **sites-building** ou equivalente, o agente deve utilizá-la como apoio principal de construção visual.
+
+A skill deve ser usada para:
+
+- composição de layout;
+- responsividade;
+- componentes;
+- hierarquia visual;
+- consistência;
+- refinamento de UX;
+- acessibilidade visual/interativa;
+- qualidade de implementação do frontend.
+
+A skill não substitui:
+
+- `README.md`;
+- `AGENTS.md`;
+- `docs/14-UX-E-DESIGN-SYSTEM.md`;
+- requisitos da tarefa;
+- contratos de domínio.
+
+Regras para `FE-*`:
+
+1. trabalhar no frontend real em `apps/web`;
+2. preservar React + TypeScript + Vite;
+3. evitar mockup estático sem interação;
+4. usar dados sintéticos enquanto a API não existir;
+5. encapsular dados sintéticos atrás de contratos/adapters;
+6. não inventar comportamento de backend;
+7. implementar estados loading, empty, error e permission quando fizer sentido ao fluxo;
+8. manter responsividade e acessibilidade;
+9. abrir PR por etapa;
+10. aguardar homologação visual antes da próxima etapa dependente.
+
+Se a skill não estiver disponível no ambiente, seguir as mesmas regras manualmente e registrar essa limitação no PR, sem trocar de stack.
