@@ -1,7 +1,7 @@
 # 03 — Arquitetura
 
 **Status:** arquitetura conceitual em consolidação  
-**Observação:** este documento fixa responsabilidades e fronteiras já decididas. A stack técnica final ainda será formalizada antes do início do desenvolvimento funcional.
+**Observação:** este documento fixa responsabilidades e fronteiras arquiteturais. A base técnica da V1 está consolidada em `21-DECISOES-TECNICAS-V1.md`.
 
 ## 1. Objetivo
 
@@ -364,7 +364,7 @@ Princípios:
 - backend coordena geração e automações;
 - banco interno guarda configuração e estado oficial do produto.
 
-A stack específica será consolidada antes do scaffold funcional.
+A V1 utiliza frontend React/TypeScript compilado, backend Symfony/PHP e API JSON same-origin. A especificação técnica completa está em `21-DECISOES-TECNICAS-V1.md`.
 
 ## 19. Query Specification
 
@@ -468,23 +468,35 @@ login
 
 Somente depois ampliar o builder e os demais formatos.
 
-## 24. Decisões ainda pendentes
+## 24. Decisões técnicas
 
-Antes do início da implementação funcional, ainda precisam ser formalmente fechados:
+A base necessária para iniciar o scaffold está consolidada em `21-DECISOES-TECNICAS-V1.md`.
 
-- stack final de frontend;
-- stack final de backend;
-- banco interno;
-- estratégia de jobs/agendamento;
-- engine de PDF;
-- engine/formato de apresentações;
-- topologia de implantação;
+Já estão definidos para a V1:
+
+- React + TypeScript + Vite no frontend;
+- Symfony 7.4 LTS no backend;
+- PHP 8.3 mínimo e 8.4 recomendado;
+- MariaDB/MySQL;
+- Doctrine ORM/DBAL;
+- sessão same-origin;
+- API JSON versionada;
+- jobs persistidos e processados por cron one-shot;
+- Symfony Mailer;
+- storage privado;
+- Dompdf como engine inicial de PDF;
+- repositório único com Instance e Control Plane em aplicações separadas.
+
+Permanecem sujeitos a spike/homologação antes da funcionalidade ou release correspondente:
+
+- encoder/proteção final do backend;
+- duração do lease e grace period;
+- engine definitiva de apresentações;
+- biblioteca de charts;
 - política de cache/materialização;
-- versionamento/publicação de análises e modelos;
-- retenção de execuções;
-- e-mail e storage.
-
-Nenhuma dessas decisões deve ser inferida como definitiva apenas por preferência histórica.
+- versionamento/snapshot definitivo de Models e Executions;
+- retenção;
+- limites mínimos de infraestrutura.
 
 ## 25. Critério arquitetural
 
