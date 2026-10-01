@@ -378,3 +378,51 @@ Não preencher os manuais finais com passos especulativos.
 Durante o desenvolvimento, atualizar requisitos e decisões canônicas. Os procedimentos finais devem ser escritos a partir da release estabilizada e testados de ponta a ponta.
 
 Consultar `docs/20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md`.
+
+
+## 22. Stack técnica da V1
+
+Para tarefas de implementação da V1, a base canônica é `docs/21-DECISOES-TECNICAS-V1.md`.
+
+Resumo:
+
+```text
+Frontend: React 19 + TypeScript + Vite 8
+Backend: Symfony 7.4 LTS
+PHP: 8.3 mínimo / 8.4 recomendado
+Banco: MariaDB/MySQL
+ORM/DBAL: Doctrine
+API: JSON same-origin /api/v1
+Auth: sessão server-side
+Jobs: fila no banco + cron one-shot
+PDF: Dompdf
+E-mail: Symfony Mailer
+```
+
+Não trocar framework, banco, autenticação, estratégia de job ou PDF por preferência do agente.
+
+Mudança de stack exige decisão documental explícita antes de implementação.
+
+Node e Composer são ferramentas de desenvolvimento/build; não devem virar dependências de runtime do cPanel sem nova decisão.
+
+## 23. Estrutura do repositório
+
+Direção inicial:
+
+```text
+apps/web
+apps/instance-api
+apps/control-plane
+docs
+tools
+```
+
+O Control Plane pertence ao mesmo repositório canônico para manter o projeto autossuficiente, mas é deployment separado e nunca entra no pacote do cliente.
+
+Não extrair bibliotecas compartilhadas prematuramente.
+
+## 24. Fase 1
+
+Quando o desenvolvimento for autorizado, seguir as tarefas FND-001 a FND-007 descritas em `docs/18-ROADMAP.md`.
+
+Não implementar a Vertical 1 de Prestação de Contas antes da homologação da fundação correspondente.
