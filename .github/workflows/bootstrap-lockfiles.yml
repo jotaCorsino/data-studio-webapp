@@ -9,6 +9,14 @@ on:
       - apps/instance-api/composer.json
       - apps/control-plane/composer.json
       - .github/workflows/bootstrap-lockfiles.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - apps/web/package.json
+      - apps/instance-api/composer.json
+      - apps/control-plane/composer.json
+      - .github/workflows/bootstrap-lockfiles.yml
 
 permissions:
   contents: write
