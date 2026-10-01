@@ -21,17 +21,17 @@ Se uma regra necessária não estiver aqui, ela deve ser formalizada antes de vi
 | `06-DADOS-DATASETS-E-CAMPOS.md` | normalização, tipos e metadados | Em consolidação |
 | `07-ANALISES-E-VISOES.md` | filtros, agrupamentos, métricas e análises | Em consolidação |
 | `08-RELATORIOS.md` | composição, configuração, preview, PDF e paginação | Em consolidação |
-| `09-DASHBOARDS.md` | painéis, interação e indicadores | Planejado |
-| `10-APRESENTACOES.md` | geração de apresentações | Planejado |
-| `11-MODELOS-E-PARAMETROS.md` | reutilização e execução parametrizada | Planejado |
-| `12-AUTOMACOES-E-DISTRIBUICAO.md` | agenda, execução e envio | Planejado |
-| `13-USUARIOS-PERFIS-E-PERMISSOES.md` | identidade, RBAC e restrições | Planejado |
-| `14-UX-E-DESIGN-SYSTEM.md` | shell, navegação, componentes e linguagem visual | Planejado |
-| `15-SEGURANCA.md` | fronteiras de confiança e controles | Planejado |
-| `16-IMPLANTACAO-E-INSTANCIAS.md` | topologia, configuração e isolamento | Planejado |
-| `17-TESTES-E-QUALIDADE.md` | estratégia de testes e homologação | Planejado |
-| `18-ROADMAP.md` | desenvolvimento por fatias verticais | Planejado |
-| `casos-de-uso/` | especificações completas de fluxos reais | Planejado |
+| `09-DASHBOARDS.md` | painéis, interação e indicadores | Em consolidação |
+| `10-APRESENTACOES.md` | geração de apresentações | Em consolidação |
+| `11-MODELOS-E-PARAMETROS.md` | reutilização e execução parametrizada | Em consolidação |
+| `12-AUTOMACOES-E-DISTRIBUICAO.md` | agenda, execução e envio | Em consolidação |
+| `13-USUARIOS-PERFIS-E-PERMISSOES.md` | identidade, RBAC e restrições | Em consolidação |
+| `14-UX-E-DESIGN-SYSTEM.md` | shell, navegação, componentes e linguagem visual | Em consolidação |
+| `15-SEGURANCA.md` | fronteiras de confiança e controles | Em consolidação |
+| `16-IMPLANTACAO-E-INSTANCIAS.md` | topologia, configuração e isolamento | Em consolidação |
+| `17-TESTES-E-QUALIDADE.md` | estratégia de testes e homologação | Em consolidação |
+| `18-ROADMAP.md` | desenvolvimento por fatias verticais | Proposta para homologação |
+| `casos-de-uso/` | especificações completas de fluxos reais | Em consolidação |
 
 ## Como ler
 
