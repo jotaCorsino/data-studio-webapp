@@ -352,3 +352,70 @@ Segurança está alinhada quando:
 8. logs são sanitizados;
 9. limites protegem Sources;
 10. produção exige HTTPS.
+
+## 35. Proteção da propriedade intelectual
+
+Segurança dos dados do cliente e proteção comercial do produto são problemas relacionados, mas diferentes.
+
+A V1 deve considerar também:
+
+- repositório privado;
+- pacote de produção mínimo;
+- backend protegido;
+- ausência de `.git` no deploy;
+- ausência de secrets;
+- ausência de chaves privadas;
+- licença verificável criptograficamente;
+- Control Plane separado;
+- bloqueio remoto não destrutivo.
+
+Não tratar ofuscação/codificação como substituto de autorização, hardening ou segurança da aplicação.
+
+## 36. Control Plane de licenças
+
+O serviço de licenças deve possuir:
+
+- HTTPS;
+- autenticação administrativa forte;
+- proteção da chave privada;
+- logs de eventos;
+- backup;
+- rate limiting;
+- rotação de chaves planejada;
+- privilégio mínimo;
+- nenhuma necessidade padrão de receber dados operacionais dos Datasets.
+
+A Instance deve enviar somente metadados mínimos necessários para licenciamento.
+
+## 37. Desativação segura
+
+Suspensão ou revogação remota:
+
+- não apaga banco;
+- não apaga storage;
+- não altera Sources;
+- não executa código destrutivo;
+- registra o estado de licença;
+- apresenta estado claro ao usuário autorizado.
+
+A remoção física da Instance é um procedimento posterior, explícito e documentado.
+
+## 38. Offboarding
+
+Cancelamento precisa preservar confidencialidade durante todo o processo.
+
+O procedimento final deve controlar:
+
+- backups;
+- exportações;
+- retenção;
+- secrets;
+- credenciais;
+- banco;
+- storage;
+- jobs;
+- logs;
+- revogação da licença;
+- evidência da remoção.
+
+Os prazos devem ser definidos antes da V1 comercial e documentados no manual técnico.
