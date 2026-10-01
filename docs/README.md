@@ -17,9 +17,9 @@ Se uma regra necessária não estiver aqui, ela deve ser formalizada antes de vi
 | `02-USUARIOS-E-JORNADAS.md` | perfis conceituais e experiências principais | Em consolidação |
 | `03-ARQUITETURA.md` | arquitetura conceitual e responsabilidades | Em consolidação |
 | `04-MODELO-DE-DOMINIO.md` | entidades e relações | Em consolidação |
-| `05-FONTES-E-CONECTORES.md` | integrações, descoberta e leitura | Planejado |
-| `06-DADOS-DATASETS-E-CAMPOS.md` | normalização, tipos e metadados | Planejado |
-| `07-ANALISES-E-VISOES.md` | filtros, agrupamentos, métricas e análises | Planejado |
+| `05-FONTES-E-CONECTORES.md` | integrações, descoberta e leitura | Em consolidação |
+| `06-DADOS-DATASETS-E-CAMPOS.md` | normalização, tipos e metadados | Em consolidação |
+| `07-ANALISES-E-VISOES.md` | filtros, agrupamentos, métricas e análises | Em consolidação |
 | `08-RELATORIOS.md` | composição, configuração, preview, PDF e paginação | Em consolidação |
 | `09-DASHBOARDS.md` | painéis, interação e indicadores | Planejado |
 | `10-APRESENTACOES.md` | geração de apresentações | Planejado |
