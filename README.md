@@ -161,3 +161,148 @@ Antes do desenvolvimento funcional, serão consolidados:
 15. roadmap de desenvolvimento.
 
 O desenvolvimento deverá avançar por **fatias verticais**, validando fluxos reais de ponta a ponta antes de expandir horizontalmente toda a plataforma.
+
+## Implantação comercial e licenciamento
+
+A direção inicial de implantação é uma **Instance dedicada instalada na hospedagem da organização, com compatibilidade prioritária com ambientes administrados por cPanel**.
+
+A Instance mantém localmente:
+
+- banco interno do Data Studio;
+- configurações;
+- usuários e permissões;
+- Connectors;
+- credenciais de Sources;
+- processamento;
+- Outputs e storage privado conforme política.
+
+O produto também possuirá um **Control Plane de licenciamento operado pela Technolife**, separado dos dados de negócio da empresa.
+
+Esse mecanismo deverá permitir:
+
+- ativação da Instance;
+- vínculo com domínio/organização;
+- licença/lease assinado;
+- tolerância temporária a indisponibilidade do Control Plane;
+- suspensão;
+- revogação;
+- reativação;
+- controle de cópias não autorizadas.
+
+O bloqueio de licença é **não destrutivo**: não apaga dados, não altera Sources e não executa sabotagem. Cancelamento e remoção seguem um processo explícito de offboarding.
+
+A proteção do produto está especificada em:
+
+- `docs/19-LICENCIAMENTO-E-PROTECAO-DO-PRODUTO.md`;
+- `docs/16-IMPLANTACAO-E-INSTANCIAS.md`;
+- `docs/15-SEGURANCA.md`.
+
+## Manuais obrigatórios da V1
+
+A primeira versão comercial deverá ser acompanhada por:
+
+- Manual de Implantação e Ativação;
+- Manual de Desativação, Offboarding e Remoção;
+- Manual do Usuário.
+
+Os manuais completos serão finalizados **ao final da V1**, quando os fluxos reais estiverem estabilizados, e deverão ser testados contra uma instalação/remoção reais e a interface da versão entregue.
+
+Os requisitos estão em `docs/20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md`.
+
+
+
+## Acompanhamento do desenvolvimento
+
+Esta tabela é o painel resumido do projeto. Ela mostra o que já foi definido, o que está em andamento e o que vem depois.
+
+> O detalhamento técnico de cada etapa permanece em `docs/18-ROADMAP.md`.
+
+| Código | Etapa | Objetivo principal | Status |
+|---|---|---|---|
+| `DOC-001` | Fundação do produto | Consolidar visão, escopo, usuários, arquitetura e domínio | **CONCLUÍDO** |
+| `DOC-002` | Dados e análises | Definir Sources, Connectors, Datasets, Fields, Analyses e Views | **CONCLUÍDO** |
+| `DOC-003` | Saídas e automação | Definir Reports, Dashboards, Presentations, Models, Parameters e Automations | **CONCLUÍDO** |
+| `DOC-004` | Governança e operação | Definir usuários, permissões, UX, segurança, implantação e qualidade | **CONCLUÍDO** |
+| `DOC-005` | Licenciamento e proteção | Definir Control Plane, Instance ID, lease, suspensão, revogação e proteção do backend | **CONCLUÍDO** |
+| `DOC-006` | Base técnica da V1 | Fechar stack, runtime, banco, API, autenticação, jobs, PDF e estrutura do repositório | **CONCLUÍDO** |
+| `DOC-007` | Homologação documental | Revisar e aprovar a documentação canônica antes do primeiro código funcional | **CONCLUÍDO** |
+| `FND-001` | Estrutura do repositório e CI | Criar `apps/web`, `apps/instance-api`, `apps/control-plane`, lockfiles e validações | **EM ANDAMENTO** |
+| `FND-002` | Backend da Instance | Configuração, Doctrine, migrations, health, logs, storage e `/api/v1` | **PLANEJADO** |
+| `FND-003` | Autenticação e autorização | User, login, logout, sessão, CSRF e proteção backend | **PLANEJADO** |
+| `FND-004` | Shell do webapp | React, rotas, design tokens, sidebar, estados e integração com sessão | **PLANEJADO** |
+| `FND-005` | Jobs e infraestrutura | Fila em banco, cron one-shot, lock, Mailer, preflight e smoke checks | **PLANEJADO** |
+| `FND-006` | Pipeline Report/PDF | Criar `ReportDocument → HTML Preview → PDF` com fixture sintética | **PLANEJADO** |
+| `FND-007` | Homologação cPanel | Gerar pacote e realizar instalação completa em ambiente cPanel de homologação | **PLANEJADO** |
+| `V1-001` | Prestação de contas | Primeiro fluxo real: Source → Dataset → Analysis → Report → Preview → PDF | **PLANEJADO** |
+| `V1-002` | Configuração de relatórios | Bindings estruturais, colunas, aliases, visibilidade e preview vivo | **PLANEJADO** |
+| `V1-003` | Administração de dados | Sources, Resources, Datasets, Fields e compatibilidade | **PLANEJADO** |
+| `V1-004` | Analysis Builder | Filtros, parâmetros, agrupamentos, métricas e publicação | **PLANEJADO** |
+| `V1-005` | Report Builder | Composição genérica de relatórios configuráveis | **PLANEJADO** |
+| `V1-006` | Dashboards | KPIs, gráficos, filtros globais e drill-through | **PLANEJADO** |
+| `V1-007` | Apresentações | Slides, layouts, bindings e exportação em formato homologado | **PLANEJADO** |
+| `V1-008` | Automações | Agenda, parâmetros relativos, geração e distribuição por e-mail | **PLANEJADO** |
+| `V1-009` | Permissões avançadas | Escopos por Dataset, Field, linha, publicação e exportação | **PLANEJADO** |
+| `V1-010` | Segundo Connector | Validar a abstração com uma origem diferente do primeiro caso | **PLANEJADO** |
+| `V1-011` | Arquivos | CSV, XLSX e SpreadsheetML/XML como Sources | **PLANEJADO** |
+| `V1-012` | Relações e dados derivados | Relações, joins controlados, Fields calculados e Datasets derivados | **PLANEJADO** |
+| `REL-001` | Licenciamento comercial | Encoder, Control Plane, lease, grace period, suspensão, revogação e reativação | **PLANEJADO** |
+| `REL-002` | Release cPanel homologada | Validar runtime, loader, banco, cron, PDF, e-mail, backup e atualização | **PLANEJADO** |
+| `REL-003` | Manuais da V1 | Implantação, offboarding/remoção e manual do usuário | **PLANEJADO** |
+| `REL-004` | Release comercial V1 | Entrega homologada, protegida, documentada e operacional | **PLANEJADO** |
+
+### Status usados
+
+- **CONCLUÍDO** — etapa finalizada e incorporada à documentação/projeto;
+- **EM ANDAMENTO** — etapa atual;
+- **PLANEJADO** — ainda não iniciada;
+- **AGUARDANDO HOMOLOGAÇÃO** — implementação concluída, aguardando validação antes de avançar;
+- **BLOQUEADO** — existe dependência ou decisão impedindo avanço.
+
+### Etapa atual
+
+```text
+FND-001 — Estrutura do repositório e CI
+```
+
+Próximo marco após a homologação:
+
+```text
+FND-002 — Backend da Instance
+```
+
+## Base técnica da V1
+
+A primeira versão foi definida para ser compatível com implantação dedicada em cPanel:
+
+```text
+Frontend
+React + TypeScript + Vite
+(build antes do deploy)
+
+Backend
+Symfony 7.4 LTS
+PHP 8.3 mínimo
+PHP 8.4 recomendado
+
+Banco interno
+MariaDB / MySQL
+
+API
+JSON same-origin
+/api/v1
+
+Autenticação
+sessão server-side
+
+Jobs
+fila persistida no banco
++
+cPanel Cron one-shot
+
+PDF inicial
+Dompdf
+```
+
+Node e Composer não são requisitos de runtime para o cliente. O pacote oficial de produção levará frontend compilado e dependências PHP já resolvidas.
+
+A especificação completa está em `docs/21-DECISOES-TECNICAS-V1.md`.
