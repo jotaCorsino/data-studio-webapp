@@ -226,8 +226,8 @@ Esta tabela é o painel resumido do projeto. Ela mostra o que já foi definido, 
 | `DOC-005` | Licenciamento e proteção | Definir Control Plane, Instance ID, lease, suspensão, revogação e proteção do backend | **CONCLUÍDO** |
 | `DOC-006` | Base técnica da V1 | Fechar stack, runtime, banco, API, autenticação, jobs, PDF e estrutura do repositório | **CONCLUÍDO** |
 | `DOC-007` | Homologação documental | Revisar e aprovar a documentação canônica antes do primeiro código funcional | **CONCLUÍDO** |
-| `FND-001` | Estrutura do repositório e CI | Criar `apps/web`, `apps/instance-api`, `apps/control-plane`, lockfiles e validações | **AGUARDANDO HOMOLOGAÇÃO** |
-| `FE-001` | Design system e direção visual | Definir tokens, componentes-base, identidade visual e primeira linguagem de interface | **PLANEJADO** |
+| `FND-001` | Estrutura do repositório e CI | Criar `apps/web`, `apps/instance-api`, `apps/control-plane`, lockfiles e validações | **CONCLUÍDO** |
+| `FE-001` | Design system e direção visual | Definir tokens, componentes-base, identidade visual e primeira linguagem de interface | **EM ANDAMENTO** |
 | `FE-002` | Shell e navegação | Construir sidebar, cabeçalhos, rotas, responsividade e estrutura geral do webapp | **PLANEJADO** |
 | `FE-003` | Início / visão gerencial | Criar a página inicial com informação gerencial sintética e hierarquia aprovada | **PLANEJADO** |
 | `FE-004` | Relatórios — operação | Construir catálogo, parâmetros, geração simulada, preview e experiência de exportação | **PLANEJADO** |
@@ -270,7 +270,7 @@ Esta tabela é o painel resumido do projeto. Ela mostra o que já foi definido, 
 ### Etapa atual
 
 ```text
-FND-001 — Estrutura do repositório e CI — AGUARDANDO HOMOLOGAÇÃO
+FE-002 — Shell e navegação
 ```
 
 Próximo marco após a homologação:
