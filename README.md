@@ -226,7 +226,7 @@ Esta tabela é o painel resumido do projeto. Ela mostra o que já foi definido, 
 | `DOC-005` | Licenciamento e proteção | Definir Control Plane, Instance ID, lease, suspensão, revogação e proteção do backend | **CONCLUÍDO** |
 | `DOC-006` | Base técnica da V1 | Fechar stack, runtime, banco, API, autenticação, jobs, PDF e estrutura do repositório | **CONCLUÍDO** |
 | `DOC-007` | Homologação documental | Revisar e aprovar a documentação canônica antes do primeiro código funcional | **CONCLUÍDO** |
-| `FND-001` | Estrutura do repositório e CI | Criar `apps/web`, `apps/instance-api`, `apps/control-plane`, lockfiles e validações | **EM ANDAMENTO** |
+| `FND-001` | Estrutura do repositório e CI | Criar `apps/web`, `apps/instance-api`, `apps/control-plane`, lockfiles e validações | **AGUARDANDO HOMOLOGAÇÃO** |
 | `FND-002` | Backend da Instance | Configuração, Doctrine, migrations, health, logs, storage e `/api/v1` | **PLANEJADO** |
 | `FND-003` | Autenticação e autorização | User, login, logout, sessão, CSRF e proteção backend | **PLANEJADO** |
 | `FND-004` | Shell do webapp | React, rotas, design tokens, sidebar, estados e integração com sessão | **PLANEJADO** |
@@ -261,7 +261,7 @@ Esta tabela é o painel resumido do projeto. Ela mostra o que já foi definido, 
 ### Etapa atual
 
 ```text
-FND-001 — Estrutura do repositório e CI
+FND-001 — Estrutura do repositório e CI — AGUARDANDO HOMOLOGAÇÃO
 ```
 
 Próximo marco após a homologação:
