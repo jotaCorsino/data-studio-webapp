@@ -500,3 +500,73 @@ Uma evolução está alinhada quando:
 8. configuração de cliente não exige fork;
 9. uma fatia real consegue atravessar todas as camadas;
 10. abstrações permanecem proporcionais aos requisitos reais.
+
+## 26. Arquitetura de implantação licenciada
+
+A direção da V1 é uma Instance instalada na hospedagem/cPanel da organização, mantendo dados e processamento próximos às Sources da empresa.
+
+A arquitetura deve separar a Instance local de um serviço proprietário de controle operado pela Technolife.
+
+```text
+Technolife Control Plane
+        │
+        │ licença / lease / revogação
+        ▼
+Instance no cPanel do cliente
+        │
+        ├── frontend compilado
+        ├── backend protegido
+        ├── banco interno
+        ├── storage privado
+        └── Connectors
+              ↓
+           Sources locais/remotas
+```
+
+Regras:
+
+- o cliente pode administrar sua hospedagem sem receber a chave privada de licenciamento;
+- o código-fonte original do backend não integra o pacote normal de produção;
+- uma cópia física dos arquivos não deve ser suficiente para ativar nova Instance;
+- licença deve poder ser suspensa ou revogada remotamente;
+- revogação não destrói dados;
+- indisponibilidade temporária do Control Plane deve possuir tolerância;
+- dados de negócio não precisam sair da Instance para validar licença.
+
+A especificação detalhada está em `19-LICENCIAMENTO-E-PROTECAO-DO-PRODUTO.md`.
+
+## 27. cPanel como ambiente inicial
+
+A primeira linha de implantação deve ser compatível com hospedagem administrada por cPanel.
+
+Isso influencia a escolha da stack e dos mecanismos de:
+
+- PHP/runtime;
+- banco MySQL/MariaDB;
+- cron/jobs;
+- storage;
+- HTTPS;
+- deploy;
+- proteção do backend;
+- ativação.
+
+A compatibilidade precisa ser testada em ambiente representativo antes da release comercial.
+
+## 28. Ciclo de vida da Instance
+
+A arquitetura deve tratar explicitamente:
+
+```text
+provisionar
+→ instalar
+→ ativar
+→ operar
+→ atualizar
+→ suspender
+→ reativar
+→ cancelar
+→ reter conforme política
+→ remover
+```
+
+Implantação e remoção são partes do produto operacional e terão manuais próprios.
