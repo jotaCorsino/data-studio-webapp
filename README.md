@@ -161,3 +161,50 @@ Antes do desenvolvimento funcional, serão consolidados:
 15. roadmap de desenvolvimento.
 
 O desenvolvimento deverá avançar por **fatias verticais**, validando fluxos reais de ponta a ponta antes de expandir horizontalmente toda a plataforma.
+
+## Implantação comercial e licenciamento
+
+A direção inicial de implantação é uma **Instance dedicada instalada na hospedagem da organização, com compatibilidade prioritária com ambientes administrados por cPanel**.
+
+A Instance mantém localmente:
+
+- banco interno do Data Studio;
+- configurações;
+- usuários e permissões;
+- Connectors;
+- credenciais de Sources;
+- processamento;
+- Outputs e storage privado conforme política.
+
+O produto também possuirá um **Control Plane de licenciamento operado pela Technolife**, separado dos dados de negócio da empresa.
+
+Esse mecanismo deverá permitir:
+
+- ativação da Instance;
+- vínculo com domínio/organização;
+- licença/lease assinado;
+- tolerância temporária a indisponibilidade do Control Plane;
+- suspensão;
+- revogação;
+- reativação;
+- controle de cópias não autorizadas.
+
+O bloqueio de licença é **não destrutivo**: não apaga dados, não altera Sources e não executa sabotagem. Cancelamento e remoção seguem um processo explícito de offboarding.
+
+A proteção do produto está especificada em:
+
+- `docs/19-LICENCIAMENTO-E-PROTECAO-DO-PRODUTO.md`;
+- `docs/16-IMPLANTACAO-E-INSTANCIAS.md`;
+- `docs/15-SEGURANCA.md`.
+
+## Manuais obrigatórios da V1
+
+A primeira versão comercial deverá ser acompanhada por:
+
+- Manual de Implantação e Ativação;
+- Manual de Desativação, Offboarding e Remoção;
+- Manual do Usuário.
+
+Os manuais completos serão finalizados **ao final da V1**, quando os fluxos reais estiverem estabilizados, e deverão ser testados contra uma instalação/remoção reais e a interface da versão entregue.
+
+Os requisitos estão em `docs/20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md`.
