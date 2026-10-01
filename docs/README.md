@@ -33,6 +33,7 @@ Se uma regra necessária não estiver aqui, ela deve ser formalizada antes de vi
 | `18-ROADMAP.md` | desenvolvimento por fatias verticais | Proposta para homologação |
 | `19-LICENCIAMENTO-E-PROTECAO-DO-PRODUTO.md` | Control Plane, ativação, proteção e revogação | Em consolidação |
 | `20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md` | requisitos dos manuais da V1 | Em consolidação |
+| `21-DECISOES-TECNICAS-V1.md` | stack, runtime, API, jobs, PDF, deploy e estrutura do repositório | Base aprovada para scaffold |
 | `manuais/` | manuais técnicos e de usuário da release | Planejado para fechamento da V1 |
 | `casos-de-uso/` | especificações completas de fluxos reais | Em consolidação |
 
