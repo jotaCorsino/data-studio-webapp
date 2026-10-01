@@ -349,3 +349,32 @@ Evitar documentação duplicada. Quando houver um documento canônico para o ass
 O projeto está em fundamentação.
 
 Não iniciar desenvolvimento funcional apenas para preencher o repositório. Primeiro consolidar os documentos essenciais e o primeiro fluxo vertical.
+
+## 20. Licenciamento e proteção do produto
+
+A implantação comercial possui requisitos de propriedade intelectual.
+
+Agentes não devem:
+
+- transformar proteção/licenciamento em código opcional sem autorização;
+- colocar chave privada de licenciamento no repositório;
+- incluir `.git` em pacote de release;
+- fazer deploy do backend original desprotegido por conveniência quando a estratégia homologada exigir proteção;
+- criar kill switch destrutivo;
+- enviar dados operacionais ao Control Plane sem requisito documentado.
+
+Consultar `docs/19-LICENCIAMENTO-E-PROTECAO-DO-PRODUTO.md` para tarefas relacionadas.
+
+## 21. Manuais obrigatórios
+
+A V1 comercial exige três manuais finais:
+
+- implantação e ativação;
+- desativação/offboarding/remoção;
+- usuário.
+
+Não preencher os manuais finais com passos especulativos.
+
+Durante o desenvolvimento, atualizar requisitos e decisões canônicas. Os procedimentos finais devem ser escritos a partir da release estabilizada e testados de ponta a ponta.
+
+Consultar `docs/20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md`.
