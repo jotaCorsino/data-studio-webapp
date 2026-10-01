@@ -336,3 +336,110 @@ Implantação está alinhada quando:
 8. configuração de cliente não exige fork;
 9. observabilidade permite suporte;
 10. conectividade da Source é considerada por Instance.
+
+## 29. Ambiente inicial homologado
+
+O primeiro alvo de implantação é hospedagem administrada por cPanel.
+
+A V1 deverá homologar uma matriz mínima contendo:
+
+- versão de cPanel/ambiente representativo;
+- versões de PHP suportadas;
+- extensões necessárias;
+- tecnologia de proteção/loader do backend;
+- MySQL/MariaDB suportado;
+- cron;
+- limites mínimos de memória/execução;
+- HTTPS;
+- storage privado;
+- acesso de rede necessário às Sources.
+
+O Manual de Implantação deve refletir essa matriz.
+
+## 30. Pacote de release
+
+A Technolife gera um pacote de produção separado do repositório de desenvolvimento.
+
+O pacote não deve incluir por padrão:
+
+- `.git`;
+- código-fonte original do backend quando a proteção homologada estiver disponível;
+- testes internos desnecessários;
+- fixtures internas;
+- secrets;
+- chaves privadas;
+- tooling de desenvolvimento.
+
+## 31. Ativação
+
+Após o deploy técnico, a Instance ainda precisa ser ativada.
+
+Fluxo conceitual:
+
+```text
+instalação
+→ Instance ID
+→ registro no Control Plane
+→ vínculo com organização/domínio
+→ emissão de lease
+→ estado ACTIVE
+→ smoke test
+```
+
+Instalação física e ativação comercial são etapas separadas.
+
+## 32. Migração legítima de servidor
+
+Trocar de hospedagem não deve exigir burlar a licença.
+
+Deve existir procedimento para:
+
+- preparar novo ambiente;
+- migrar banco/storage;
+- atualizar domínio/fingerprint quando necessário;
+- reativar a Instance;
+- invalidar vínculo antigo;
+- executar smoke tests.
+
+## 33. Cancelamento e remoção
+
+Cancelamento inicia um fluxo formal de offboarding.
+
+A remoção não acontece automaticamente no momento da suspensão de licença.
+
+O processo deve observar:
+
+- data efetiva;
+- backup;
+- exportações previstas;
+- retenção;
+- revogação;
+- remoção técnica;
+- evidência.
+
+O procedimento oficial será o `MANUAL-DE-DESATIVACAO-E-REMOCAO.md`.
+
+## 34. Retenção
+
+Os prazos finais ainda não estão definidos.
+
+Antes da release comercial, devem ser fixados valores para:
+
+- banco interno;
+- backups;
+- Outputs;
+- logs;
+- metadados do Control Plane;
+- temporários.
+
+A política precisa distinguir o que está sob controle da Technolife do que permanece na hospedagem controlada pelo cliente.
+
+## 35. Manuais operacionais
+
+A V1 deve possuir:
+
+- Manual de Implantação e Ativação;
+- Manual de Desativação, Offboarding e Remoção;
+- Manual do Usuário.
+
+Os requisitos estão em `20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md`.
