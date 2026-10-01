@@ -426,3 +426,27 @@ Não extrair bibliotecas compartilhadas prematuramente.
 Quando o desenvolvimento for autorizado, seguir as tarefas FND-001 a FND-007 descritas em `docs/18-ROADMAP.md`.
 
 Não implementar a Vertical 1 de Prestação de Contas antes da homologação da fundação correspondente.
+
+
+## 25. Painel de acompanhamento
+
+O `README.md` contém a seção **Acompanhamento do desenvolvimento**, que funciona como painel executivo do projeto.
+
+Sempre que uma tarefa ou etapa alterar de estado, o mesmo PR deve atualizar a linha correspondente no painel.
+
+Estados permitidos:
+
+- `CONCLUÍDO`;
+- `EM ANDAMENTO`;
+- `PLANEJADO`;
+- `AGUARDANDO HOMOLOGAÇÃO`;
+- `BLOQUEADO`.
+
+Regras:
+
+- somente uma etapa principal deve ser marcada como `EM ANDAMENTO`, salvo trabalho paralelo explicitamente autorizado;
+- tarefa implementada mas ainda não validada deve ficar como `AGUARDANDO HOMOLOGAÇÃO`, não `CONCLUÍDO`;
+- após homologação, atualizar para `CONCLUÍDO` antes de iniciar a próxima etapa dependente;
+- manter a seção `Etapa atual` e o `Próximo marco` coerentes com a tabela;
+- o painel é um resumo; detalhes técnicos continuam em `docs/18-ROADMAP.md`;
+- não criar nova etapa no painel sem também formalizar seu lugar no roadmap quando ela representar mudança real de planejamento.
