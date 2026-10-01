@@ -34,39 +34,146 @@ Saída:
 - decisões técnicas pendentes identificadas;
 - nenhuma dependência de repositório externo.
 
-## 4. Fase 1 — Decisões técnicas e scaffold
+## 4. Fase 1 — Scaffold técnico
 
-Antes de feature funcional:
+As decisões-base estão consolidadas em `21-DECISOES-TECNICAS-V1.md`.
 
-- fechar frontend;
-- fechar backend;
-- banco interno;
-- autenticação;
-- migrations;
-- API interna;
-- jobs;
-- storage;
-- PDF;
-- estrutura de testes;
-- CI.
+A Fase 1 deve ser implementada em tarefas independentes e homologáveis.
 
-Saída:
+### FND-001 — Estrutura do repositório e CI
+
+Criar:
 
 ```text
-aplicação vazia
+apps/web
+apps/instance-api
+apps/control-plane
+tools
+```
+
+Configurar:
+
+- React/TypeScript/Vite;
+- Symfony 7.4;
+- npm/composer lockfiles;
+- lint;
+- typecheck;
+- PHPUnit;
+- build;
+- audits;
+- CI inicial.
+
+Sem feature de negócio.
+
+### FND-002 — Backend da Instance
+
+Criar fundação:
+
+- configuração;
+- conexão MariaDB/MySQL;
+- Doctrine;
+- migrations;
+- health check;
+- logging;
+- storage privado;
+- tratamento uniforme de erro;
+- namespace `/api/v1`.
+
+Sem Source real ainda.
+
+### FND-003 — Autenticação e autorização básica
+
+Implementar:
+
+- User;
+- login;
+- logout;
+- sessão;
+- password hashing;
+- CSRF;
+- estados de usuário;
+- perfil inicial;
+- rota `/me`;
+- proteção backend.
+
+### FND-004 — Shell do webapp
+
+Implementar:
+
+- shell React;
+- rotas;
+- design tokens iniciais;
+- sidebar;
+- page header;
+- estados loading/empty/error;
+- login;
+- integração com sessão.
+
+Sem catálogo fictício extenso.
+
+### FND-005 — Jobs e infraestrutura operacional
+
+Implementar:
+
+- transporte persistido no banco;
+- comando one-shot;
+- lock;
+- cron contract;
+- Mailer;
+- diretórios privados;
+- preflight CLI;
+- smoke checks básicos.
+
+### FND-006 — Pipeline de Report/PDF mínimo
+
+Implementar os contratos mínimos:
+
+```text
+ReportDocument
+→ HTML Preview
+→ Dompdf
+```
+
+Usar fixture sintética, ainda sem Connector real.
+
+### FND-007 — Pacote de homologação cPanel
+
+Produzir release não comercial/de desenvolvimento:
+
+- frontend compilado;
+- vendor PHP;
+- migrations;
+- scripts CLI;
+- manifest;
+- checklist.
+
+Instalar em ambiente cPanel de homologação e registrar incompatibilidades.
+
+Ainda não exige encoder/licença comercial completos.
+
+### Saída da Fase 1
+
+```text
+aplicação-base
 +
-autenticação
+login
 +
-health
+API
 +
 banco
 +
-testes
+jobs
 +
-deploy de homologação
+PDF mínimo
++
+CI
++
+deploy de homologação cPanel
 ```
 
-Evitar construir catálogo completo nesta fase.
+Somente depois iniciar a Vertical 1 de negócio.
+
+Evitar construir catálogo, builders ou mocks extensos nesta fase.
 
 ## 5. Vertical 1 — Prestação de contas end-to-end
 
