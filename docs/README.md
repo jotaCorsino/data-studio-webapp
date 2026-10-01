@@ -31,6 +31,9 @@ Se uma regra necessária não estiver aqui, ela deve ser formalizada antes de vi
 | `16-IMPLANTACAO-E-INSTANCIAS.md` | topologia, configuração e isolamento | Em consolidação |
 | `17-TESTES-E-QUALIDADE.md` | estratégia de testes e homologação | Em consolidação |
 | `18-ROADMAP.md` | desenvolvimento por fatias verticais | Proposta para homologação |
+| `19-LICENCIAMENTO-E-PROTECAO-DO-PRODUTO.md` | Control Plane, ativação, proteção e revogação | Em consolidação |
+| `20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md` | requisitos dos manuais da V1 | Em consolidação |
+| `manuais/` | manuais técnicos e de usuário da release | Planejado para fechamento da V1 |
 | `casos-de-uso/` | especificações completas de fluxos reais | Em consolidação |
 
 ## Como ler
