@@ -226,7 +226,16 @@ Esta tabela é o painel resumido do projeto. Ela mostra o que já foi definido, 
 | `DOC-005` | Licenciamento e proteção | Definir Control Plane, Instance ID, lease, suspensão, revogação e proteção do backend | **CONCLUÍDO** |
 | `DOC-006` | Base técnica da V1 | Fechar stack, runtime, banco, API, autenticação, jobs, PDF e estrutura do repositório | **CONCLUÍDO** |
 | `DOC-007` | Homologação documental | Revisar e aprovar a documentação canônica antes do primeiro código funcional | **CONCLUÍDO** |
-| `FND-001` | Estrutura do repositório e CI | Criar `apps/web`, `apps/instance-api`, `apps/control-plane`, lockfiles e validações | **EM ANDAMENTO** |
+| `FND-001` | Estrutura do repositório e CI | Criar `apps/web`, `apps/instance-api`, `apps/control-plane`, lockfiles e validações | **CONCLUÍDO** |
+| `FE-001` | Design system e direção visual | Definir tokens, componentes-base, identidade visual e primeira linguagem de interface | **EM ANDAMENTO** |
+| `FE-002` | Shell e navegação | Construir sidebar, cabeçalhos, rotas, responsividade e estrutura geral do webapp | **PLANEJADO** |
+| `FE-003` | Início / visão gerencial | Criar a página inicial com informação gerencial sintética e hierarquia aprovada | **PLANEJADO** |
+| `FE-004` | Relatórios — operação | Construir catálogo, parâmetros, geração simulada, preview e experiência de exportação | **PLANEJADO** |
+| `FE-005` | Studio de relatórios | Materializar estrutura, tabelas, colunas, aliases, documento e preview vivo | **PLANEJADO** |
+| `FE-006` | Dashboards | Construir experiência visual de KPIs, gráficos, filtros e drill-through | **PLANEJADO** |
+| `FE-007` | Dados e fontes | Construir UX de Sources, Datasets, Fields, estados e compatibilidade | **PLANEJADO** |
+| `FE-008` | Automações | Construir agenda, parâmetros, destinatários, histórico e estados de execução | **PLANEJADO** |
+| `FE-009` | Usuários e administração | Construir usuários, perfis, permissões e configurações administrativas | **PLANEJADO** |
 | `FND-002` | Backend da Instance | Configuração, Doctrine, migrations, health, logs, storage e `/api/v1` | **PLANEJADO** |
 | `FND-003` | Autenticação e autorização | User, login, logout, sessão, CSRF e proteção backend | **PLANEJADO** |
 | `FND-004` | Shell do webapp | React, rotas, design tokens, sidebar, estados e integração com sessão | **PLANEJADO** |
@@ -261,14 +270,45 @@ Esta tabela é o painel resumido do projeto. Ela mostra o que já foi definido, 
 ### Etapa atual
 
 ```text
-FND-001 — Estrutura do repositório e CI
+FE-001 — Design system e direção visual
 ```
 
 Próximo marco após a homologação:
 
 ```text
-FND-002 — Backend da Instance
+FE-002 — Shell e navegação
 ```
+
+## Estratégia de desenvolvimento frontend-first
+
+Após a homologação do `FND-001`, o desenvolvimento seguirá uma fase **frontend-first** antes do backend funcional.
+
+Objetivo:
+
+```text
+interface real em React
+→ dados sintéticos tipados
+→ homologação visual
+→ ajustes
+→ contratos estabilizados
+→ backend real
+→ substituição progressiva dos mocks
+```
+
+O frontend criado nessa fase é o frontend definitivo do produto, não um protótipo descartável.
+
+Regras:
+
+- trabalhar diretamente em `apps/web`;
+- utilizar contratos TypeScript e fixtures sintéticas;
+- manter acesso a dados atrás de adapters/repositories para permitir troca posterior por `/api/v1`;
+- não colocar regra de negócio definitiva dentro dos mocks;
+- não depender de backend fictício para decisões de segurança;
+- cada área visual deve ser homologada antes da próxima etapa dependente;
+- tarefas de frontend devem utilizar a skill de **site/webapp building do Codex**, quando disponível no ambiente de execução;
+- a skill auxilia UX, layout, responsividade e componentes, mas não substitui a documentação canônica do projeto.
+
+A fase visual está detalhada em `docs/18-ROADMAP.md`.
 
 ## Base técnica da V1
 

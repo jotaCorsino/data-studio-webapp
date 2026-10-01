@@ -860,3 +860,31 @@ A base está adequada quando:
 10. backend pode ser protegido antes da distribuição;
 11. deploy é reproduzível;
 12. stack cabe no ambiente de hospedagem homologado.
+
+
+## 46. Estratégia de implementação frontend-first
+
+Após o scaffold técnico, a V1 será desenvolvida inicialmente pelo frontend para permitir homologação visual antecipada.
+
+Fluxo:
+
+```text
+React/TypeScript real
+→ contratos tipados
+→ fixtures/adapters sintéticos
+→ homologação visual
+→ API Symfony
+→ integração progressiva
+```
+
+Essa estratégia não altera a arquitetura final.
+
+O frontend continua consumindo contratos que serão atendidos pela API same-origin `/api/v1`.
+
+Os dados sintéticos devem ser isolados para que a migração para backend real seja uma troca de implementação de acesso a dados, não uma reescrita visual.
+
+## 47. Skills do Codex no frontend
+
+Tarefas `FE-*` devem utilizar a skill de construção de sites/webapps disponibilizada pelo ambiente Codex quando existir.
+
+A skill é ferramenta de implementação e refinamento visual. A documentação deste repositório continua sendo a autoridade de produto e arquitetura.
