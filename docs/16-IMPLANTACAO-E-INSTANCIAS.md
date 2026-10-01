@@ -163,15 +163,22 @@ Regras:
 
 ## 13. Jobs
 
-Automações exigem mecanismo de jobs.
+A V1 utiliza jobs persistidos no banco interno e execução por cPanel Cron.
 
-Possibilidades:
+Direção:
 
-- cron;
-- queue worker;
-- scheduler da plataforma.
+```text
+cron
+→ comando CLI one-shot
+→ lock
+→ agendar automações vencidas
+→ processar lote da fila
+→ sair
+```
 
-A escolha será feita junto da stack e ambiente-alvo.
+Não exigir daemon permanente, Redis, RabbitMQ ou Supervisor.
+
+A implementação utilizará Symfony Messenger com transporte Doctrine ou mecanismo equivalente aprovado, com lock obrigatório contra sobreposição.
 
 ## 14. Storage
 
@@ -443,3 +450,50 @@ A V1 deve possuir:
 - Manual do Usuário.
 
 Os requisitos estão em `20-MANUAIS-E-DOCUMENTACAO-OPERACIONAL.md`.
+
+
+## 36. Matriz técnica inicial da V1
+
+A implantação homologada começa com:
+
+```text
+Frontend: React + TypeScript + Vite
+Backend: Symfony 7.4 LTS
+PHP mínimo: 8.3
+PHP recomendado: 8.4
+Banco: MariaDB ou MySQL
+Jobs: banco + cPanel Cron
+PDF: Dompdf
+E-mail: SMTP via Symfony Mailer
+API: same-origin /api/v1
+Autenticação: sessão server-side
+```
+
+Node e Composer são ferramentas de desenvolvimento/build e não requisitos de runtime da implantação normal.
+
+O pacote de produção leva:
+
+- frontend compilado;
+- dependências PHP de produção resolvidas;
+- backend protegido quando a release for comercial;
+- migrations;
+- assets;
+- scripts operacionais aprovados.
+
+Detalhes completos: `21-DECISOES-TECNICAS-V1.md`.
+
+## 37. Requisito de Terminal/SSH
+
+A implantação oficialmente suportada da V1 exige acesso a PHP CLI por Terminal/SSH ou execução equivalente fornecida pelo provedor.
+
+Isso permite:
+
+- migrations;
+- preflight;
+- cache;
+- diagnóstico;
+- smoke tests;
+- atualização;
+- operação de jobs.
+
+Um instalador web público não faz parte da V1.
