@@ -270,13 +270,13 @@ Esta tabela é o painel resumido do projeto. Ela mostra o que já foi definido, 
 ### Etapa atual
 
 ```text
-FE-002 — Shell e navegação
+FE-001 — Design system e direção visual
 ```
 
 Próximo marco após a homologação:
 
 ```text
-FE-001 — Design system e direção visual
+FE-002 — Shell e navegação
 ```
 
 ## Estratégia de desenvolvimento frontend-first
