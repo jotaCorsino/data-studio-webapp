@@ -442,3 +442,64 @@ UX está alinhada quando:
 8. interface é acessível;
 9. design usa tokens;
 10. crescimento funcional não implica crescimento indiscriminado da navegação.
+
+
+## 34. Homologação visual frontend-first
+
+A primeira construção funcional da interface será feita antes do backend de negócio completo.
+
+Objetivo:
+
+- permitir avaliação precoce da navegação;
+- validar densidade de informação;
+- validar nomenclatura;
+- validar hierarquia;
+- testar fluxos;
+- corrigir UX antes de cristalizar contratos de backend desnecessários.
+
+A interface dessa fase é código definitivo em `apps/web`, alimentado temporariamente por dados sintéticos tipados.
+
+## 35. Ciclo de homologação
+
+Cada área principal deve seguir:
+
+```text
+Codex implementa
+→ lint/typecheck/test/build
+→ PR
+→ homologação visual
+→ ajustes
+→ aprovação
+→ próxima área
+```
+
+Não acumular várias áreas grandes antes da primeira revisão visual.
+
+## 36. Dados sintéticos
+
+Dados de frontend devem:
+
+- ser claramente fictícios;
+- representar cenários realistas;
+- cobrir loading, vazio, sucesso e erro quando útil;
+- respeitar tipos previstos;
+- ficar separados dos componentes;
+- não conter segredos ou dados reais;
+- poder ser substituídos por chamadas à API sem reescrever a tela.
+
+## 37. Critério de aprovação visual
+
+A homologação de uma etapa deve observar ao menos:
+
+- clareza;
+- navegação;
+- consistência;
+- densidade;
+- responsividade;
+- acessibilidade;
+- estados;
+- ação principal;
+- linguagem pt-BR;
+- aderência ao fluxo real.
+
+Aprovação visual não significa aprovação de regra de negócio ou segurança backend.
